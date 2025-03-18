@@ -1,0 +1,24 @@
+<form id="addDepartmentForm">
+  <label for="departmentName">Department Name:</label>
+  <input type="text" id="departmentName" name="departmentName" required />
+  <br />
+  <label for="departmentDescription">Department Description:</label>
+  <textarea id="departmentDescription" name="departmentDescription" required></textarea>
+  <br />
+  <button type="submit">Create</button>
+</form>
+
+<script>
+  document.getElementById('addDepartmentForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const name = document.getElementById('departmentName').value;
+    const description = document.getElementById('departmentDescription').value;
+
+    if (name && description) {
+      console.log('Department Created:', { name, description });
+      alert('Department created successfully!');
+    } else {
+      alert('Please fill in all fields.');
+    }
+  });
+</script>
